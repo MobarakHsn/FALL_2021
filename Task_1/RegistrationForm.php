@@ -7,15 +7,37 @@
             <table>
                 <tr>
                     <td>First Name:</td>
-                    <td><input type="text" name="fname"></td><?php echo $validatefname; ?>
+                    <td><input type="text" name="fname"></td>
+                </tr>
+                    <td>
+                        <?php if($cnt===7)echo "Your first name is: ".$validatefname;
+                              else echo $validatefname;
+                        ?>
+                    </td>
+                <tr>
+
                 </tr>
                 <tr>
                     <td>Last Name:</td>
-                    <td><input type="text" name="lname"></td><?php echo $validatelname; ?>
+                    <td><input type="text" name="lname"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <?php if($cnt===7)echo "Your last name is: ".$validatelname;
+                            else echo $validatelname;
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Age:</td>
-                    <td><input type="text" name="age"></td><?php echo $validateage; ?>
+                    <td><input type="text" name="age"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <?php if($cnt===7)echo "Your age is: ".$validateage;
+                            else echo $validateage;
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Designation:</td>
@@ -25,9 +47,14 @@
                         <input type="radio" name="designation" value="Senior Programmer">
                         <label for="designation">Senior Programmer</label>
                         <input type="radio" name="designation" value="Project Lead">
-                        <label for="designation">Project Lead</label> 
-                        <?php echo $validateradio; ?>
-                        <br>
+                        <label for="designation">Project Lead</label>
+                    </td> 
+                </tr>
+                <tr>
+                    <td>
+                        <?php if($cnt===7)echo "Your designation is: ".$validateradio;
+                            else echo $validateradio;
+                        ?>
                     </td>
                 </tr>
                 <tr>
@@ -39,23 +66,42 @@
                         <label for="language2">PHP</label>
                         <input type="checkbox" name="language3" value="C++">
                         <label for="language3">C++</label>
-                        <?php echo $validatecheckbox; ?>
-                        <?php echo $v1;?>
-                        <?php echo $v2;?>
-                        <?php echo $v3;?>
-                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><?php if($cnt===7)
+                                {
+                                    echo "Selected options are: ".$v1." ".$v2." ".$v3;
+                                }
+                                else
+                                {
+                                    echo $validatecheckbox;
+                                }
+                        ?>
                     </td>
                 </tr>
                 <tr>
                     <td>E-mail:</td>
                     <td>
-                        <input type="text" name="email"><?php echo $validateemail; ?>
+                        <input type="text" name="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td><?php if($cnt===7)echo "Your email is: ".$validateemail;
+                              else echo $validateemail;
+                        ?>
                     </td>
                 </tr>
                 <tr>
                     <td>Password:</td>
                     <td>
-                        <input type="password" name="password" ><?php echo $validatepassword; ?>
+                        <input type="password" name="password" >
+                    </td>
+                </tr>
+                <tr>
+                    <td><?php if($cnt===7)echo "Your password is: ".$validatepassword;
+                              else echo $validatepassword;
+                        ?>
                     </td>
                 </tr>
                 <tr>
@@ -71,7 +117,6 @@
                     </td>
                 </tr>
             </table>
-        <inout>
         </form>
     </body>
 </html>
