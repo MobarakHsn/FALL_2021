@@ -19,9 +19,9 @@ if($_SERVER["REQUEST_METHOD"]==="POST")
     $fname=$_REQUEST["fname"];
     $lname=$_REQUEST["lname"];
     $email=$_REQUEST["email"];
-    $gender=$_REQUEST["gender"];
+    $gender="";
     $mobile=$_REQUEST["mobile"];
-    $dob=$_REQUEST["dob"];
+    $dob="";
     $ssc=$_REQUEST["ssc"];
     $hsc=$_REQUEST["hsc"];
     $dept=$_REQUEST["dept"];
@@ -91,6 +91,7 @@ if($_SERVER["REQUEST_METHOD"]==="POST")
     }
     else
     {
+        $gender=$_REQUEST["gender"];
         $cnt1=$cnt1+1;
     }
 
@@ -110,9 +111,10 @@ if($_SERVER["REQUEST_METHOD"]==="POST")
         }
     }
 
-    if($_REQUEST["dob"])
+    if(isset($_REQUEST["dob"]))
     {
         $cnt1=$cnt1+1;
+        $dob=$_REQUEST["dob"];
     }
     else
     {
@@ -181,6 +183,17 @@ if($_SERVER["REQUEST_METHOD"]==="POST")
     if($cnt1===11)
     {
         $cnt=11;
+        $validatefname=$fname;
+        $validatelname=$lname;
+        $validateemail=$email;
+        $validategender=$gender;
+        $validatemobile=$mobile;
+        $validatedob=$dob;
+        $validatehsc=$hsc;
+        $validatessc=$ssc;
+        $validatecourse=$dept;
+        $validateyear=$year;
+        $validatesemester=$semester;
         $connection = new db();
         $conobj=$connection->OpenCon();
         $connection->InsertUser($conobj,$fname,$lname,$email,$gender,$mobile,$dob,$hsc,$ssc,$dept,$year,$semester);
