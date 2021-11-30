@@ -195,6 +195,10 @@ function validateform()
             document.getElementById("message_password").innerHTML="Atleast 8 character required";
             return false;
         }
+        else
+        {
+            document.getElementById("message_password").innerHTML="";
+        }
     }
 
     document.getElementById("print_fname").innerHTML="First Name: "+fname;
